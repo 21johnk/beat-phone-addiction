@@ -1,0 +1,205 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>MOP Meditation Only Phone</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow left-aligned column. Hero with phone sketch, three feature rows, a price block, footer. Dark first, light supported. */
+:root {
+  --bg: #0f1217;
+  --panel: #171c24;
+  --panel-on: #1b222c;
+  --line: #262d38;
+  --fg: #eef1f5;
+  --text: #c3cad4;
+  --muted: #8a94a3;
+  --accent: #a9bdd1;
+  --btn-bg: #eef1f5;
+  --btn-fg: #0f1217;
+  --btn-hover: #ffffff;
+  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --col: 40rem;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f3f5f8; --panel: #ffffff; --panel-on: #e9eef4; --line: #d5dbe3;
+    --fg: #12161c; --text: #3a4350; --muted: #5e6978; --accent: #3d5a78;
+    --btn-bg: #12161c; --btn-fg: #f3f5f8; --btn-hover: #2a323d;
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #f3f5f8; --panel: #ffffff; --panel-on: #e9eef4; --line: #d5dbe3;
+  --fg: #12161c; --text: #3a4350; --muted: #5e6978; --accent: #3d5a78;
+  --btn-bg: #12161c; --btn-fg: #f3f5f8; --btn-hover: #2a323d;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; background: var(--bg); }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding-block: 4rem 3rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: var(--col); margin-inline: auto; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* Hero */
+h1 { margin: 0; font-family: var(--display); font-weight: 400; }
+.l0 {
+  display: block; margin-bottom: 1.1rem;
+  font-weight: 300; font-size: clamp(0.95rem, 3.2vw, 1.25rem); line-height: 1.3;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);
+}
+.l1 {
+  display: block; font-weight: 800;
+  font-size: clamp(2.6rem, 11vw, 5rem); line-height: 1; letter-spacing: -0.035em;
+  color: var(--fg); text-wrap: balance;
+}
+.l2 {
+  display: block; margin-top: 1.1rem;
+  font-weight: 300; font-size: clamp(0.95rem, 3.2vw, 1.25rem); line-height: 1.3;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+}
+.btns { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.25rem; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 3rem; padding: 0 1.6rem; border-radius: 999px;
+  font-family: var(--body); font-weight: 600; font-size: 1rem;
+  text-decoration: none; cursor: pointer;
+  border: 1px solid var(--line); color: var(--fg); background: transparent;
+  transition: background 0.15s, border-color 0.15s;
+}
+.btn:hover { border-color: var(--muted); }
+.btn.solid { background: var(--btn-bg); color: var(--btn-fg); border-color: var(--btn-bg); }
+.btn.solid:hover { background: var(--btn-hover); border-color: var(--btn-hover); }
+
+/* Phone sketch */
+.phone {
+  margin: 3rem 0 0; width: min(100%, 15rem);
+  padding: 1.1rem 1rem 1rem; border: 1px solid var(--line); border-radius: 2rem;
+  background: var(--panel);
+}
+.phone .time { margin: 0 0 1rem; text-align: center; font-family: var(--display); font-weight: 300; font-size: 2.2rem; letter-spacing: -0.02em; color: var(--fg); font-variant-numeric: tabular-nums; }
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+.tile {
+  padding: 0.8rem 0.7rem; border: 1px solid var(--line); border-radius: 1rem;
+  background: var(--panel-on); font-size: 0.9rem; font-weight: 500; color: var(--fg);
+}
+.tile small { display: block; margin-top: 0.1rem; font-size: 0.75rem; font-weight: 400; color: var(--muted); }
+.locked {
+  margin-top: 0.6rem; padding: 0.7rem; border: 1px dashed var(--line); border-radius: 1rem;
+  text-align: center; font-size: 0.8rem; color: var(--muted);
+}
+.phone-cap { margin: 0.75rem 0 0; font-size: 0.85rem; color: var(--muted); }
+
+/* Sections */
+section { margin-top: 5rem; }
+h2 {
+  margin: 0 0 1.25rem; font-family: var(--display); font-weight: 500;
+  font-size: clamp(1.5rem, 4.5vw, 1.9rem); line-height: 1.2; letter-spacing: -0.015em;
+  color: var(--fg); text-wrap: balance;
+}
+.feats { list-style: none; margin: 0; padding: 0; }
+.feats li { padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
+.feats li:first-child { border-top: 1px solid var(--line); }
+.feats h3 { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(1.4rem, 4.5vw, 1.8rem); line-height: 1.15; letter-spacing: -0.02em; color: var(--fg); text-wrap: balance; }
+.feats p { margin: 0.5rem 0 0; font-size: 1.1rem; color: var(--text); }
+.feats .lead { margin: 0 0 0.4rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+/* Cost */
+.price {
+  padding: 1.75rem 1.5rem; background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+}
+.amount { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(3.2rem, 14vw, 5rem); line-height: 1; letter-spacing: -0.04em; color: var(--fg); font-variant-numeric: tabular-nums; }
+.incl { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; gap: 0.5rem; }
+.incl li { padding-left: 1.4rem; position: relative; color: var(--fg); }
+.incl li::before { content: ""; position: absolute; left: 0.1rem; top: 0.62em; width: 0.55rem; height: 0.3rem; border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
+
+footer { margin-top: 5rem; padding-top: 1.75rem; border-top: 1px solid var(--line); font-size: 0.85rem; color: var(--muted); }
+footer p { margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
+</style>
+
+<div class="wrap">
+
+  <header id="top">
+    <h1>
+      <span class="l0">Sleep derailed by phone?</span>
+      <span class="l1">Bring on the MOP.</span>
+      <span class="l2">Meditation only phone</span>
+    </h1>
+    <div class="btns">
+      <a class="btn solid" href="#cost">Preorder</a>
+      <a class="btn" href="#features">Learn more</a>
+    </div>
+
+    <div class="phone" role="img" aria-label="Sketch of the MOP home screen showing Meditate, Workout, Alarm and Timer, with a locked row for adding another app">
+      <p class="time">9:41</p>
+      <div class="tiles">
+        <div class="tile">Meditate</div>
+        <div class="tile">Workout</div>
+        <div class="tile">Alarm</div>
+        <div class="tile">Timer</div>
+      </div>
+      <div class="locked">Add an app: changes unlock in 1 hour</div>
+    </div>
+  </header>
+
+  <section id="features" aria-labelledby="feat-h">
+    <h2 id="feat-h">A phone that only helps you wind down and wake up.</h2>
+    <ul class="feats">
+      <li>
+        <p class="lead">Apps</p>
+        <h3>Meditation and workout apps only.</h3>
+        <p>No distractions.</p>
+      </li>
+      <li>
+        <p class="lead">Mornings</p>
+        <h3>Set alarms and timers.</h3>
+        <p>Then wake up and meditate.</p>
+      </li>
+      <li>
+        <p class="lead">Changes</p>
+        <h3>Need another app?</h3>
+        <p>Wait an hour to make changes.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="cost" aria-labelledby="cost-h">
+    <h2 id="cost-h">Cost</h2>
+    <div class="price">
+      <p class="amount">$129</p>
+      <ul class="incl">
+        <li>Fast, free shipping</li>
+        <li>30-day free returns</li>
+        <li>Pay with Klarna</li>
+      </ul>
+      <div class="btns">
+        <a class="btn solid" href="#cost" data-preorder>Preorder</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>MOP, the meditation only phone.</p>
+  </footer>
+
+</div>
+
+</body></html>
